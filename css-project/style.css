@@ -1,0 +1,95 @@
+html {
+    box-sizing: border-box;
+}
+
+*, *::before, *::after {
+    box-sizing: inherit;
+}
+
+.branding {
+    font-family: cursive;
+    font-style: italic;
+    text-align: center;
+}
+
+.newspaper-grid {
+    display: grid;
+    border: 2px solid black;
+    border-bottom: none;
+    grid-template-columns: 1fr 2fr 1fr;
+    grid-template-areas: 
+    "header header header"
+    "article-1 article-2 article-3"
+    "article-4 article-5 article-5";
+}
+
+.article-1 {
+    grid-area: article-1;
+}
+
+.article-2 {
+    grid-area: article-2;
+}
+
+.article-3 {
+    grid-area: article-3;
+}
+
+.article-4 {
+    grid-area: article-4;
+}
+
+.article-5 {
+    grid-area: article-5;
+}
+
+.nav-links {
+    grid-area: header;
+    border-bottom: 2px solid black;
+}
+
+.nav-links ul {
+    display: flex;
+    justify-content: space-evenly;
+    margin: 0px;
+}
+
+.nav-links li {
+    flex: 1;
+    list-style-type: none;
+    padding: 20px;
+    border-right: 2px solid black;
+    text-align: center;
+}
+
+.nav-links li:last-child {
+    border-right: none;
+}
+
+section {
+    padding: 10px;
+    border-right: 2px solid black;
+    border-bottom: 2px solid black;
+}
+
+main section:nth-child(4){
+    border-right: none;
+}
+
+main section:nth-child(6){
+    border-right: none;
+}
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+}
+
+h2 {
+    text-align: center;
+}
+
+.featured-image {
+    display: block;
+    margin: 0 auto;
+}
