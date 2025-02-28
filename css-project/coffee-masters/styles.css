@@ -1,122 +1,152 @@
 html {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
 
-*, *::before, *::after {
-    box-sizing: inherit;
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
 }
 
 body {
-    margin: 0;
-    padding: 0; 
-    background-color: #EFF0F0;
+  margin: 0;
+  padding: 0;
+  background-color: #eff0f0;
+  font-family: 'Open Sans', sans-serif;;
 }
 
 .branding {
-    background-color:#43281C;
-    color: #FBF2C0;
-    padding: 10px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 10px;
-    font-size: 10px;
+  background-color: #43281c;
+  color: #fbf2c0;
+  padding: 10px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  font-size: 10px;
 }
 
 .branding img {
-    height: 40px;
+  height: 40px;
 }
 
 .order-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "order-items order-name-payment"
-    "place-order place-order"
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas:
+    "order-items order-name-payment"
+    "place-order place-order";
 }
 
 .order-items {
-    grid-area: order-items;
-    padding:30px;
+  grid-area: order-items;
+  padding: 30px;
 }
 
 .order-name-payment {
-    grid-area: order-name-payment;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
-    gap: 30px;
+  grid-area: order-name-payment;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
 }
 
 .place-order {
-    grid-area: place-order;
-    padding: 30px;
-    display: flex;
-    flex-direction: column;
+  grid-area: place-order;
+  padding: 30px;
+  display: flex;
+  flex-direction: column;
 }
 
 .place-order button {
-    background-color: tomato;
-    border-radius: 50px;
-    border: none;
-    padding: 10px 0;
+  background-color: #deb993;
+  border-radius: 50px;
+  border: none;
+  padding: 10px 0;
 }
 
 .total-details {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
 
-.total-details div{
-    width: 300px;
+.total-details div {
+  width: 300px;
 }
 
-.total-details p{
-    display: flex;
-    justify-content: space-between;
+.total-details p {
+  display: flex;
+  justify-content: space-between;
 }
 
 .order-card {
-    background-color: #EEE1D5;
-    padding: 20px;
+  background-color: #eee1d5;
+  padding: 20px;
 }
 
 .order-items-content {
-    display: flex;
-    gap: 10px;
+  display: flex;
+  gap: 10px;
+  border-bottom: 1px solid #9b744d;
+}
+
+.order-items-content:last-child {
+  border-bottom: none;
 }
 
 .order-items-title {
-    margin-right: auto;
+  margin-right: auto;
 }
 
-.overlayed-input-group, .overlayed-input-group-cvv {
-    position: relative;
-    display: flex;
+.order-items-title p {
+  margin-bottom: 5px;
 }
 
-.overlayed-input, .overlayed-input-cvv {
-    border-color: crimson;
-    padding: 8px;
-    border-radius: 100px;
-    flex: 1;
+.overlayed-input-group,
+.overlayed-input-group-cvv {
+  position: relative;
+  display: flex;
+}
+
+.overlayed-input,
+.overlayed-input-cvv {
+  border: 1px solid #9b744d;
+  background-color: #eee1d5;
+  padding: 8px;
+  border-radius: 100px;
+  flex: 1;
 }
 
 .overlayed-input-cvv {
-    flex: 0;
+  flex: 0;
 }
 
 .overlayed-input-label {
-    background-color: white;
-    color: crimson;
-    font-size: 11px;
-    position: absolute;
-    left: 25px;
-    top: -7px;
-    padding: 0 2px;
+  background-color: #eee1d5;
+  color: #9b744d;
+  font-size: 11px;
+  position: absolute;
+  left: 25px;
+  top: -7px;
+  padding: 0 2px;
 }
 
 .overlayed-input-group-payment {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.order-items-title .add-ons {
+  font-size: 12px;
+  margin-top: 0;
+}
+
+.card-title,
+.add-ons {
+  color: #9b744d;
+}
+
+.bold {
+  font-weight: bold;
 }
