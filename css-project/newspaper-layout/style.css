@@ -7,7 +7,7 @@ html {
 }
 
 .branding {
-    font-family: cursive;
+    font-size: 60px;
     font-style: italic;
     text-align: center;
 }
@@ -52,6 +52,7 @@ html {
     display: flex;
     justify-content: space-evenly;
     margin: 0px;
+    font-size: 30px;
 }
 
 .nav-links li {
@@ -83,10 +84,16 @@ main section:nth-child(6){
 a {
     text-decoration: none;
     cursor: pointer;
+    color: #666
+}
+
+a:hover{
+    text-decoration: underline;
 }
 
 h2 {
     text-align: center;
+    font-size: 30px;
 }
 
 .featured-image {
