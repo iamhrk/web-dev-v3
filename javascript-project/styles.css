@@ -1,0 +1,95 @@
+html {
+  box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 40px;
+}
+
+.container {
+    width:400px;
+    margin:70px auto;
+    background-color: black;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-template-areas: 
+        "result result result result"
+        "delete delete delete operators"
+        "numbers numbers numbers operators"
+        "numbers numbers numbers operators"
+        "numbers numbers numbers operators"
+        "numbers numbers numbers operators"
+        ;
+
+}
+
+button {
+    height: 100px;
+    width: 33.33%;
+    border: 1px solid black;
+    font-size: 40px;
+    cursor: pointer;
+    padding: 1px 6px;
+}
+
+.result {
+    grid-area: result;
+    color:white;
+    background-color: black;
+    padding: 20px 5px;
+}
+
+.delete-options {
+    grid-area: delete;
+    display: flex;
+    justify-content: space-between;
+
+}
+
+.delete-options button {
+    background-color: #D8D9DB;
+}
+
+.clear-button {
+    flex : auto;
+}
+
+.numbers {
+    grid-area: numbers;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.numbers button {
+    background-color: #D8D9DB;
+}
+
+.zero {
+    flex: 1;
+    border-bottom: none;
+}
+
+.operators {
+    grid-area: operators;
+}
+
+.operators button {
+    width: 100%;
+    background-color: #DF974C;
+    border-right: none;
+}
+
+.remove-left-border {
+    border-left: none;
+}
+
+.equal {
+    border-bottom: none;
+}
