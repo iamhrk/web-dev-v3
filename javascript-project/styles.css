@@ -80,6 +80,14 @@ button {
     background-color: #D8D9DB;
 }
 
+.delete-options button:hover , .numbers button:hover {
+    background-color: #ebebeb;
+}
+
+.delete-options button:active , .numbers button:active {
+    background-color: #bbbcbe;
+}
+
 .zero {
     flex: 1;
     border-bottom: none;
@@ -93,6 +101,18 @@ button {
     width: 100%;
     background-color: #DF974C;
     border-right: none;
+}
+
+.operators button:hover{
+    background-color: #dfb07e;
+}
+
+.operators button:active{
+    background-color: #dd8d37;
+}
+
+.operators button: {
+    background-color: #dfb07e;
 }
 
 .remove-left-border {
