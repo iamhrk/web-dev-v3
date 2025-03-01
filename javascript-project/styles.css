@@ -39,11 +39,20 @@ button {
     padding: 1px 6px;
 }
 
-.result {
+.result-container {
     grid-area: result;
     color:white;
     background-color: black;
     padding: 20px 5px;
+    position: relative;
+    height: 80px;
+}
+
+.result-text {
+    position: absolute;
+    right: 0;
+    padding: 0 5px;
+    margin: 0;
 }
 
 .delete-options {
