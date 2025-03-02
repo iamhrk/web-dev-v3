@@ -5,7 +5,7 @@ let currentOperator = "";
 let previousOperator = "";
 let operatorValue;
 let calculatedPreviuosResult = 0;
-let currentResult = 0;
+let currentResult = "";
 let canSetOperator = false;
 let isResultCalculated = false;
 answer.innerText = 0;
@@ -14,15 +14,21 @@ const operand = document.querySelector(".numbers");
 const operator = document.querySelector(".operators");
 const equal = document.querySelector(".equal");
 const reset = document.querySelector(".clear-button");
+const backspace = document.querySelector(".backspace");
+
+const backspaceOperand = () => {
+  currentOperandValue = +currentOperandValue.toString().slice(0, -1);
+  answer.innerText = currentOperandValue;
+};
 
 const resetCalculator = () => {
-  currentOperandValue = 0;
+  currentOperandValue = null;
   previousOperandValue = 0;
   currentOperator = "";
   previousOperator = "";
   operatorValue;
   calculatedPreviuosResult = 0;
-  currentResult = 0;
+  currentResult = "";
   canSetOperator = false;
   isResultCalculated = false;
   answer.innerText = 0;
@@ -31,11 +37,9 @@ const resetCalculator = () => {
 const displayResult = (event) => {
   event.stopPropagation();
   calculateCurrentResult();
-  if (isResultCalculated) {
-    answer.innerText = currentResult;
-  } else {
-    answer.innerText = currentOperandValue;
-  }
+  answer.innerText = currentResult;
+  previousOperandValue = currentResult;
+  previousOperator = "";
 };
 
 const calculateCurrentResult = () => {
@@ -57,24 +61,39 @@ const calculateCurrentResult = () => {
         console.error("Not a valid operation.");
         break;
     }
+    previousOperandValue = currentResult;
+    currentOperandValue = null;
     isResultCalculated = true;
+    console.log("current result", currentResult);
+    console.log("previousOperand", previousOperandValue);
+    console.log("currentOperand", currentOperandValue);
+  } else {
+    isResultCalculated = false;
+    if (currentResult !== "") {
+      previousOperandValue = currentResult;
+    } else {
+      previousOperandValue = currentOperandValue;
+    }
+    currentOperandValue = null;
+    console.log("current result else", currentResult);
+    console.log("previousOperand else", previousOperandValue);
+    console.log("currentOperand else", currentOperandValue);
   }
 };
 
-const setResult = (currentOperandValue) => {
-  answer.innerHTML = currentOperandValue;
-  console.log("coperand", currentOperandValue);
-};
-
 const setcurrentOperandValue = (event) => {
-  if (currentOperandValue !== 0) {
+  if (isResultCalculated) {
+    currentOperandValue = currentResult;
+  }
+  if (currentOperandValue !== null) {
     currentOperandValue = +(
       currentOperandValue.toString() + event.target.value.toString()
     );
   } else {
     currentOperandValue = +event.target.value;
   }
-  setResult(currentOperandValue);
+  console.log("coperand", currentOperandValue);
+  answer.innerText = currentOperandValue;
   canSetOperator = true;
 };
 
@@ -82,16 +101,9 @@ const setOperator = (event) => {
   if (canSetOperator) {
     calculateCurrentResult();
     currentOperator = event.target.value;
-    previousOperandValue = currentOperandValue;
-    if (isResultCalculated) {
-      previousOperandValue = currentResult;
-    }
-    currentOperandValue = 0;
     previousOperator = currentOperator;
-    setResult(0);
+    answer.innerText = 0;
     canSetOperator = false;
-    console.log("poperand", previousOperandValue);
-    console.log("poperator", previousOperator);
   }
 };
 
@@ -99,3 +111,4 @@ operand.addEventListener("click", setcurrentOperandValue);
 operator.addEventListener("click", setOperator);
 equal.addEventListener("click", displayResult);
 reset.addEventListener("click", resetCalculator);
+backspace.addEventListener("click", backspaceOperand);
